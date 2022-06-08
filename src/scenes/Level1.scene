@@ -1,0 +1,48 @@
+{
+    "id": "e58bdd29-2aa3-49d3-a5a3-62a507586adb",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level1"
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "f8bbb48c-a2cc-4892-8ce3-6aa12eb597d1",
+            "label": "room",
+            "components": [],
+            "texture": {
+                "key": "room"
+            },
+            "x": 402,
+            "y": 311,
+            "scaleX": 1.45,
+            "scaleY": 1.35,
+            "tintTopLeft": "#575757",
+            "tintTopRight": "#575757",
+            "tintBottomLeft": "#575757",
+            "tintBottomRight": "#575757"
+        },
+        {
+            "type": "Image",
+            "id": "91bce1ee-85e1-4f9e-b95c-bd8ccee7644c",
+            "label": "girl",
+            "components": [],
+            "texture": {
+                "key": "girl"
+            },
+            "x": 422,
+            "y": 261,
+            "scaleX": 0.26,
+            "scaleY": 0.26
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

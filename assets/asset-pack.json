@@ -1,0 +1,63 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/1boy.png",
+                "type": "image",
+                "key": "1boy"
+            },
+            {
+                "url": "assets/1girl.png",
+                "type": "image",
+                "key": "1girl"
+            },
+            {
+                "url": "assets/2boy.png",
+                "type": "image",
+                "key": "2boy"
+            },
+            {
+                "url": "assets/2girl.png",
+                "type": "image",
+                "key": "2girl"
+            },
+            {
+                "url": "assets/3boy.png",
+                "type": "image",
+                "key": "3boy"
+            },
+            {
+                "url": "assets/3girl.png",
+                "type": "image",
+                "key": "3girl"
+            },
+            {
+                "url": "assets/dino.png",
+                "key": "dino",
+                "type": "image"
+            },
+            {
+                "url": "assets/Girls_new_pl 33.png",
+                "type": "image",
+                "key": "girl"
+            },
+            {
+                "url": "assets/Playble ads 33_man.png",
+                "type": "image",
+                "key": "man"
+            },
+            {
+                "url": "assets/photo5258345357350387955.jpg",
+                "type": "image",
+                "key": "room"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
