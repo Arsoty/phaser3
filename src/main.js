@@ -6,6 +6,10 @@ window.addEventListener('load', function () {
 		height: 600,
 		type: Phaser.AUTO,
         backgroundColor: "#242424",
+		physics: {
+        	default: 'arcade',
+        	arcade: { debug: true }
+    	},
 		scale: {
 			mode: Phaser.Scale.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH

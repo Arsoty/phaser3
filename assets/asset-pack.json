@@ -37,9 +37,24 @@
                 "type": "image"
             },
             {
+                "url": "assets/dress.png",
+                "type": "image",
+                "key": "dress_btn"
+            },
+            {
                 "url": "assets/Girls_new_pl 33.png",
                 "type": "image",
                 "key": "girl"
+            },
+            {
+                "url": "assets/highlight.png",
+                "type": "image",
+                "key": "highlight"
+            },
+            {
+                "url": "assets/hint_pointer.png",
+                "type": "image",
+                "key": "hint_pointer"
             },
             {
                 "url": "assets/Playble ads 33_man.png",
@@ -50,6 +65,11 @@
                 "url": "assets/photo5258345357350387955.jpg",
                 "type": "image",
                 "key": "room"
+            },
+            {
+                "url": "assets/skirt.png",
+                "type": "image",
+                "key": "skirt_btn"
             }
         ]
     },
