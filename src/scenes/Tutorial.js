@@ -15,6 +15,7 @@ class Tutorial extends Phaser.Scene {
 
 	/** @returns {void} */
 	editorCreate() {
+		this.cameras.main.fadeIn(500, 0, 0, 0)
 
 		this.text = this.add.text(310, 30, "Choose your dress", {fontFamily: "Nunito Sans", fontSize: "24px"})
 		this.text.setDepth(3)
@@ -30,13 +31,13 @@ class Tutorial extends Phaser.Scene {
 		this.hint2.setDepth(2)
 
 		// room
-		const room = this.add.image(402, 311, "room");
-		room.scaleX = 1.45;
-		room.scaleY = 1.35;
-		room.tintTopLeft = 5723991;
-		room.tintTopRight = 5723991;
-		room.tintBottomLeft = 5723991;
-		room.tintBottomRight = 5723991;
+		this.room = this.add.image(402, 311, "room");
+		this.room.scaleX = 1.45;
+		this.room.scaleY = 1.35;
+		this.room.tintTopLeft = 5723991;
+		this.room.tintTopRight = 5723991;
+		this.room.tintBottomLeft = 5723991;
+		this.room.tintBottomRight = 5723991;
 
 		// girl
 		const girl = this.add.image(396, 308, "girl");
@@ -49,14 +50,15 @@ class Tutorial extends Phaser.Scene {
 		//skirt_btn
 		this.skirt_btn = this.add.image(610, 460, "skirt_btn");
 
-		this.dress_btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {console.log(1)})
-		this.skirt_btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {console.log(2)})
+		this.dress_btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 1})
+		this.skirt_btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 2})
 
 		//hint_pointer
 		this.hint_pointer = this.add.image(250, 520, "hint_pointer")
 		this.hint_pointer.scaleX = 0.6;
 		this.hint_pointer.scaleY = 0.6;
 
+		this.choise = 0
 
 		this.events.emit("scene-awake");
 	}
@@ -71,6 +73,24 @@ class Tutorial extends Phaser.Scene {
 	update() {
 		this.moveHintPointer(this.hint_pointer, 8)
 		this.highlightChoise(this.hint_pointer, this.dress_btn, this.skirt_btn)
+		if (this.choise) {
+		this.userPickDress(this.choise)
+		}
+		// this.scene.start("Tutorial")
+	}
+
+	userPickDress(variant) {
+			this.room.tintTopLeft = 0xffffff;
+			this.room.tintTopRight = 0xffffff;
+			this.room.tintBottomLeft = 0xffffff;
+			this.room.tintBottomRight = 0xffffff;
+			this.hint_pointer.destroy()
+			this.hint1.destroy()
+			this.hint2.destroy()
+			this.text.destroy()
+			this.hint_pointer.x = 100
+			this.cameras.main.fadeOut(500, 0, 0, 0)
+			this.scene.start(`Choise${variant}`)
 	}
 
 	moveHintPointer(hintPointer, speed) {
@@ -79,13 +99,13 @@ class Tutorial extends Phaser.Scene {
 			this.resetHintPointer(hintPointer)
 		}
 	};
-
+	
 	resetHintPointer(hintPointer) {
 		hintPointer.x = 250;
 	}
 	
 	highlightChoise(hintPointer, choise1, choise2) {
-		if (hintPointer.x >= 255 && hintPointer.x <= 300) {
+		if (hintPointer.x >= 260 && hintPointer.x <= 360) {
 			choise1.scaleX = 1.2
 			choise1.scaleY = 1.2
 		} else if (hintPointer.x >= 620 && hintPointer.x <= 720) {

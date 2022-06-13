@@ -32,6 +32,16 @@
                 "key": "3girl"
             },
             {
+                "url": "assets/bag1.png",
+                "type": "image",
+                "key": "bag1"
+            },
+            {
+                "url": "assets/bag2.png",
+                "type": "image",
+                "key": "bag2"
+            },
+            {
                 "url": "assets/dino.png",
                 "key": "dino",
                 "type": "image"
@@ -42,14 +52,29 @@
                 "key": "dress_btn"
             },
             {
-                "url": "assets/Girls_new_pl 33.png",
+                "url": "assets/girl.png",
                 "type": "image",
                 "key": "girl"
             },
             {
-                "url": "assets/highlight.png",
+                "url": "assets/girl_dress.png",
                 "type": "image",
-                "key": "highlight"
+                "key": "girl_dress"
+            },
+            {
+                "url": "assets/girl_skirt.png",
+                "type": "image",
+                "key": "girl_skirt"
+            },
+            {
+                "url": "assets/girl1.png",
+                "type": "image",
+                "key": "girl1"
+            },
+            {
+                "url": "assets/girl2.png",
+                "type": "image",
+                "key": "girl2"
             },
             {
                 "url": "assets/hint_pointer.png",
@@ -57,9 +82,19 @@
                 "key": "hint_pointer"
             },
             {
-                "url": "assets/Playble ads 33_man.png",
+                "url": "assets/man.png",
                 "type": "image",
                 "key": "man"
+            },
+            {
+                "url": "assets/man1.png",
+                "type": "image",
+                "key": "man1"
+            },
+            {
+                "url": "assets/man2.png",
+                "type": "image",
+                "key": "man2"
             },
             {
                 "url": "assets/photo5258345357350387955.jpg",

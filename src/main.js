@@ -20,6 +20,8 @@ window.addEventListener('load', function () {
 	game.scene.add("Level", Level);
 	game.scene.add("Level1", Level1);
 	game.scene.add("Tutorial", Tutorial);
+	game.scene.add("Choise1", Choise1);
+	game.scene.add("Choise2", Choise2);
 	game.scene.add("Boot", Boot, true);
 });
 

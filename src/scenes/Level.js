@@ -25,10 +25,10 @@ class Level extends Phaser.Scene {
 		room.tintBottomLeft = 5723991;
 		room.tintBottomRight = 5723991;
 
-		// man
-		const man = this.add.image(411, 267, "man");
-		man.scaleX = 0.4;
-		man.scaleY = 0.4;
+		// // man
+		// const man = this.add.image(411, 267, "man");
+		// man.scaleX = 0.4;
+		// man.scaleY = 0.4;
 
 		this.load.image('1boy', '1boy.png');
         this.load.image('2boy', '2boy.png');
@@ -48,7 +48,28 @@ class Level extends Phaser.Scene {
         const sprite = this.add.sprite(400, 300, '1boy')
 		sprite.scaleX = 0.6
 		sprite.scaleY = 0.6
+		sprite.setDepth(2)
 		sprite.play('anim_bd');
+
+		this.load.image('man', 'man.png');
+        this.load.image('man1', 'man1.png');
+        this.load.image('man2', 'man2.png');
+
+		this.anims.create({
+            key: 'anim_man',
+            frames: [
+                { key: 'man' },
+                { key: 'man1' },
+                { key: 'man2' }
+            ],
+            frameRate: 5,
+            repeat: 0
+        });
+
+        const sprite1 = this.add.sprite(411, 267, 'man')
+		sprite1.scaleX = 0.4
+		sprite1.scaleY = 0.4
+		sprite1.play('anim_man');
 
 		this.events.emit("scene-awake");
 	}
@@ -60,7 +81,12 @@ class Level extends Phaser.Scene {
 	create() {
 		this.editorCreate();
 
-		setTimeout(() => this.scene.start("Level1"), 1500)
+		setTimeout(() => {
+			this.cameras.main.fadeOut(500, 0, 0, 0)
+			this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+			this.scene.start("Level1")
+	})
+			}, 1500)
 	}
 
 	// dialogShowUp(man_dialog, start = 0, end = 1.4) {
