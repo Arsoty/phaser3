@@ -42,6 +42,11 @@
                 "key": "bag2"
             },
             {
+                "url": "assets/blue_necklace.png",
+                "type": "image",
+                "key": "blue_necklace"
+            },
+            {
                 "url": "assets/dino.png",
                 "key": "dino",
                 "type": "image"
@@ -55,6 +60,26 @@
                 "url": "assets/girl.png",
                 "type": "image",
                 "key": "girl"
+            },
+            {
+                "url": "assets/Girl_bag1.png",
+                "type": "image",
+                "key": "Girl_bag1"
+            },
+            {
+                "url": "assets/Girl_bag2.png",
+                "type": "image",
+                "key": "Girl_bag2"
+            },
+            {
+                "url": "assets/Girl_bag3.png",
+                "type": "image",
+                "key": "Girl_bag3"
+            },
+            {
+                "url": "assets/Girl_bag4.png",
+                "type": "image",
+                "key": "Girl_bag4"
             },
             {
                 "url": "assets/girl_dress.png",
@@ -75,6 +100,16 @@
                 "url": "assets/girl2.png",
                 "type": "image",
                 "key": "girl2"
+            },
+            {
+                "url": "assets/glasses.png",
+                "type": "image",
+                "key": "glasses"
+            },
+            {
+                "url": "assets/gold_necklace.png",
+                "type": "image",
+                "key": "gold_necklace"
             },
             {
                 "url": "assets/hint_pointer.png",

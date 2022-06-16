@@ -22,6 +22,11 @@ window.addEventListener('load', function () {
 	game.scene.add("Tutorial", Tutorial);
 	game.scene.add("Choise1", Choise1);
 	game.scene.add("Choise2", Choise2);
+	game.scene.add("BagChoise1", BagChoise1)
+	game.scene.add("BagChoise2", BagChoise2)
+	game.scene.add("BagChoise3", BagChoise3)
+	game.scene.add("BagChoise4", BagChoise4)
+	game.scene.add("PlaceChoise", PlaceChoise)
 	game.scene.add("Boot", Boot, true);
 });
 
