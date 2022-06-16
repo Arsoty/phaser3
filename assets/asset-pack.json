@@ -42,6 +42,11 @@
                 "key": "bag2"
             },
             {
+                "url": "assets/beach.png",
+                "type": "image",
+                "key": "beach"
+            },
+            {
                 "url": "assets/blue_necklace.png",
                 "type": "image",
                 "key": "blue_necklace"
@@ -115,6 +120,51 @@
                 "url": "assets/hint_pointer.png",
                 "type": "image",
                 "key": "hint_pointer"
+            },
+            {
+                "url": "assets/hotel.png",
+                "type": "image",
+                "key": "hotel"
+            },
+            {
+                "url": "assets/last_glasses.png",
+                "type": "image",
+                "key": "last_glasses"
+            },
+            {
+                "url": "assets/last_gold_necklace.png",
+                "type": "image",
+                "key": "last_gold_necklace"
+            },
+            {
+                "url": "assets/last1_glasses.png",
+                "type": "image",
+                "key": "last1_glasses"
+            },
+            {
+                "url": "assets/last1_gold_necklace.png",
+                "type": "image",
+                "key": "last1_gold_necklace"
+            },
+            {
+                "url": "assets/last2_choker.png",
+                "type": "image",
+                "key": "last2_choker"
+            },
+            {
+                "url": "assets/last2_glasses.png",
+                "type": "image",
+                "key": "last2_glasses"
+            },
+            {
+                "url": "assets/last3_choker.png",
+                "type": "image",
+                "key": "last3_choker"
+            },
+            {
+                "url": "assets/last3_glasses.png",
+                "type": "image",
+                "key": "last3_glasses"
             },
             {
                 "url": "assets/man.png",
