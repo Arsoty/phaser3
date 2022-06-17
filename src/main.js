@@ -21,7 +21,6 @@ window.addEventListener('load', function () {
 	game.scene.add("Level1", Level1);
 	game.scene.add("Tutorial", Tutorial);
 	game.scene.add("Choise1", Choise1);
-	game.scene.add("Choise2", Choise2);
 	game.scene.add("BagChoise1", BagChoise1)
 	game.scene.add("PlaceChoise", PlaceChoise)
 	game.scene.add("Final", Final)

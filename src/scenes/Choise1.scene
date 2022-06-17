@@ -1,0 +1,29 @@
+{
+    "id": "3e4966a5-daa4-44dc-86ff-c436f907d896",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Choise1"
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "0fa166b3-76d6-4778-8c19-53ebb9fd1487",
+            "label": "3girl",
+            "components": [],
+            "texture": {
+                "key": "3girl"
+            },
+            "x": 633,
+            "y": 285
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

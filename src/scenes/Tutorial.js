@@ -40,9 +40,9 @@ class Tutorial extends Phaser.Scene {
 		this.room.tintBottomRight = 5723991;
 
 		// girl
-		const girl = this.add.image(396, 308, "girl");
-		girl.scaleX = 0.26;
-		girl.scaleY = 0.26;
+		this.girl = this.add.image(396, 308, "girl");
+		this.girl.scaleX = 0.26;
+		this.girl.scaleY = 0.26;
 
 		//dress_btn
 		this.dress_btn = this.add.image(190, 460, "dress_btn");
@@ -74,9 +74,8 @@ class Tutorial extends Phaser.Scene {
 		this.moveHintPointer(this.hint_pointer, 8)
 		this.highlightChoise(this.hint_pointer, this.dress_btn, this.skirt_btn)
 		if (this.choise) {
-		this.userPickDress(this.choise)
+			this.userPickDress(this.choise)
 		}
-		// this.scene.start("Tutorial")
 	}
 
 	userPickDress(variant) {
@@ -88,9 +87,42 @@ class Tutorial extends Phaser.Scene {
 			this.hint1.destroy()
 			this.hint2.destroy()
 			this.text.destroy()
+			this.girl.destroy()
+			this.skirt_btn.destroy()
+			this.dress_btn.destroy()
+			this.load.image('anima', 'anima.png');
+
+			this.anims.create({
+            key: 'anim',
+            frames: [
+                { key: 'anima' },
+            ],
+            frameRate: 120,
+            repeat: -1,
+			repeatDelay: 1000
+       		});
+			 for (let i = 0; i < 1; i++)
+        {
+            let x = Phaser.Math.Between(300, 500);
+            let y = Phaser.Math.Between(100, 600);
+
+            const sprite = this.add.sprite(x, y, 'anima')
+			sprite.scaleX = 0.05
+			sprite.scaleY = 0.05
+			sprite.setDepth(2)
+            sprite.play('anim');
+		}
+			if (variant === 1) {
+				this.girl = this.add.image(396, 308, "girl_dress")
+				this.girl.scaleX = 0.26;
+				this.girl.scaleY = 0.26;
+			} else if(variant === 2) {
+				this.girl = this.add.image(396, 308, "girl_skirt")
+				this.girl.scaleX = 0.26;
+				this.girl.scaleY = 0.26;
+			}	
 			this.hint_pointer.x = 100
-			this.cameras.main.fadeOut(500, 0, 0, 0)
-			this.scene.start(`Choise${variant}`)
+			setTimeout(() => {this.scene.start(`Choise1`, {choise: variant})}, 1000)
 	}
 
 	moveHintPointer(hintPointer, speed) {

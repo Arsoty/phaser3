@@ -63,13 +63,13 @@ class Level extends Phaser.Scene {
                 { key: 'man2' }
             ],
             frameRate: 5,
-            repeat: 0
+            repeat: 0,
+			repeatDelay: 200,
         });
 
         const sprite1 = this.add.sprite(411, 267, 'man')
 		sprite1.scaleX = 0.4
 		sprite1.scaleY = 0.4
-		sprite1.play('anim_man');
 
 		this.events.emit("scene-awake");
 	}

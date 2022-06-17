@@ -32,6 +32,11 @@
                 "key": "3girl"
             },
             {
+                "url": "assets/anima.png",
+                "type": "image",
+                "key": "anima"
+            },
+            {
                 "url": "assets/bag1.png",
                 "type": "image",
                 "key": "bag1"

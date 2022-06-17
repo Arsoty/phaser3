@@ -1,0 +1,29 @@
+{
+    "id": "4918307e-7b8b-414e-b226-fe137ce3f0b4",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "BagChoise1"
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "b2a49e89-db82-4d4c-8bd2-0e33a3fdd1f3",
+            "label": "room",
+            "components": [],
+            "texture": {
+                "key": "room"
+            },
+            "x": 678,
+            "y": 294
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
