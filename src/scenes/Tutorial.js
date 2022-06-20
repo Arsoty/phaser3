@@ -45,10 +45,10 @@ class Tutorial extends Phaser.Scene {
 		this.girl.scaleY = 0.26;
 
 		//dress_btn
-		this.dress_btn = this.add.image(190, 460, "dress_btn");
+		this.dress_btn = this.add.image(280, 460, "dress_btn");
 
 		//skirt_btn
-		this.skirt_btn = this.add.image(610, 460, "skirt_btn");
+		this.skirt_btn = this.add.image(520, 460, "skirt_btn");
 
 		this.dress_btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 1})
 		this.skirt_btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 2})
@@ -104,7 +104,7 @@ class Tutorial extends Phaser.Scene {
 			 for (let i = 0; i < 1; i++)
         {
             let x = Phaser.Math.Between(300, 500);
-            let y = Phaser.Math.Between(100, 600);
+            let y = Phaser.Math.Between(100, 500);
 
             const sprite = this.add.sprite(x, y, 'anima')
 			sprite.scaleX = 0.05
@@ -137,10 +137,10 @@ class Tutorial extends Phaser.Scene {
 	}
 	
 	highlightChoise(hintPointer, choise1, choise2) {
-		if (hintPointer.x >= 260 && hintPointer.x <= 360) {
+		if (hintPointer.x >= 260 && hintPointer.x <= 450) {
 			choise1.scaleX = 1.2
 			choise1.scaleY = 1.2
-		} else if (hintPointer.x >= 620 && hintPointer.x <= 720) {
+		} else if (hintPointer.x >= 500 && hintPointer.x <= 720) {
 				choise2.scaleX = 1.2
 				choise2.scaleY = 1.2
 		} else {

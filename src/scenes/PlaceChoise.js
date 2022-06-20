@@ -41,10 +41,10 @@ class PlaceChoise extends Phaser.Scene {
 		this.room.scaleX = 1.45;
 		this.room.scaleY = 1.35;
 
-		this.hotel = this.add.image(190, 460, "hotel");
+		this.hotel = this.add.image(280, 460, "hotel");
 		this.hotel.setDepth(3)
 
-		this.beach = this.add.image(610, 460, "beach");
+		this.beach = this.add.image(520, 460, "beach");
 		this.beach.setDepth(3)
 
 		this.hotel.scaleX = 0.60
@@ -154,6 +154,30 @@ class PlaceChoise extends Phaser.Scene {
 		this.text.destroy()
 		this.beach.destroy()
 		this.hotel.destroy()
+
+			this.load.image('anima', 'anima.png');
+
+			this.anims.create({
+            key: 'anim',
+            frames: [
+                { key: 'anima' },
+            ],
+            frameRate: 120,
+            repeat: -1,
+			repeatDelay: 1000
+       		});
+			 for (let i = 0; i < 1; i++)
+        {
+            let x = Phaser.Math.Between(300, 500);
+            let y = Phaser.Math.Between(100, 600);
+
+            const sprite = this.add.sprite(x, y, 'anima')
+			sprite.scaleX = 0.05
+			sprite.scaleY = 0.05
+			sprite.setDepth(2)
+            sprite.play('anim');
+		}
+
 		setTimeout(() => {this.scene.start(`Final`, {choise: variant, look: this.look})}, 1000)
 	}
 

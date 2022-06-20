@@ -20,17 +20,17 @@ class Choise1 extends Phaser.Scene {
 	/** @returns {void} */
 	editorCreate() {
 
-		this.text = this.add.text(310, 30, "Choose your bag", {fontFamily: "Nunito Sans", fontSize: "24px"})
+		this.text = this.add.text(310, 30, "Choose your bag", { fontFamily: "Nunito Sans", fontSize: "24px" })
 		this.text.setDepth(3)
 
 		this.hint1 = this.add.graphics();
-    	this.hint1.fillStyle(0x000000, 1);
-   		this.hint1.fillRoundedRect(250, 20, 300, 50, 32);
+		this.hint1.fillStyle(0x000000, 1);
+		this.hint1.fillRoundedRect(250, 20, 300, 50, 32);
 		this.hint1.setDepth(2)
 
 		this.hint2 = this.add.graphics();
-    	this.hint2.lineGradientStyle(2, 0xFFBC43, 0xEE6A2F, 1);
-   		this.hint2.strokeRoundedRect(250, 20, 300, 50, 25);
+		this.hint2.lineGradientStyle(2, 0xFFBC43, 0xEE6A2F, 1);
+		this.hint2.strokeRoundedRect(250, 20, 300, 50, 25);
 		this.hint2.setDepth(2)
 
 		this.cameras.main.fadeIn(500, 0, 0, 0)
@@ -39,35 +39,35 @@ class Choise1 extends Phaser.Scene {
 		this.room.scaleX = 1.45;
 		this.room.scaleY = 1.35;
 		this.room.tintTopLeft = 0xffffff;
-			this.room.tintTopRight = 0xffffff;
-			this.room.tintBottomLeft = 0xffffff;
-			this.room.tintBottomRight = 0xffffff;
+		this.room.tintTopRight = 0xffffff;
+		this.room.tintBottomLeft = 0xffffff;
+		this.room.tintBottomRight = 0xffffff;
 
-			//bag1
-		this.bag1 = this.add.image(190, 460, "bag1");
+		//bag1
+		this.bag1 = this.add.image(280, 460, "bag1").setDepth(3);
 		this.bag1.scaleX = 1.25
 		this.bag1.scaleY = 1.25
 
 		//bag2
-		this.bag2 = this.add.image(610, 460, "bag2");
-		this.bag2.scaleX = 0.8
-		this.bag2.scaleY = 0.8
+		this.bag2 = this.add.image(520, 460, "bag2").setDepth(3);
+		this.bag2.scaleX = 0.78
+		this.bag2.scaleY = 0.78
 
-			if (this.variant === 1) {
-				// girl
-				this.girl = this.add.image(396, 308, "girl_dress");
-				this.girl.scaleX = 0.26;
-				this.girl.scaleY = 0.26;
-				this.bag1.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 1})
-				this.bag2.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 2})
-			} else if(this.variant === 2) {
-				// girl
-				this.girl = this.add.image(396, 308, "girl_skirt");
-				this.girl.scaleX = 0.26;
-				this.girl.scaleY = 0.26;
-				this.bag1.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 3})
-				this.bag2.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.choise = 4})
-			}
+		if (this.variant === 1) {
+			// girl
+			this.girl = this.add.image(396, 308, "girl_dress");
+			this.girl.scaleX = 0.26;
+			this.girl.scaleY = 0.26;
+			this.bag1.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => { this.choise = 1 })
+			this.bag2.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => { this.choise = 2 })
+		} else if (this.variant === 2) {
+			// girl
+			this.girl = this.add.image(396, 308, "girl_skirt");
+			this.girl.scaleX = 0.26;
+			this.girl.scaleY = 0.26;
+			this.bag1.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => { this.choise = 3 })
+			this.bag2.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => { this.choise = 4 })
+		}
 
 		this.events.emit("scene-awake");
 	}
@@ -96,25 +96,47 @@ class Choise1 extends Phaser.Scene {
 		this.bag1.destroy()
 		this.bag2.destroy()
 
+		this.load.image('anima', 'anima.png');
+
+		this.anims.create({
+			key: 'anim',
+			frames: [
+				{ key: 'anima' },
+			],
+			frameRate: 120,
+			repeat: -1,
+			repeatDelay: 1000
+		});
+		for (let i = 0; i < 1; i++) {
+			let x = Phaser.Math.Between(300, 500);
+			let y = Phaser.Math.Between(100, 600);
+
+			const sprite = this.add.sprite(x, y, 'anima')
+			sprite.scaleX = 0.05
+			sprite.scaleY = 0.05
+			sprite.setDepth(2)
+			sprite.play('anim');
+		}
+
 		if (variant === 1) {
 			this.girl = this.add.image(396, 308, "Girl_bag4");
 			this.girl.scaleX = 0.26;
 			this.girl.scaleY = 0.26;
-		} else if(variant === 2) {
+		} else if (variant === 2) {
 			this.girl = this.add.image(396, 308, "Girl_bag3");
 			this.girl.scaleX = 0.26;
 			this.girl.scaleY = 0.26;
-		} else if(variant === 3) {
+		} else if (variant === 3) {
 			this.girl = this.add.image(396, 308, "Girl_bag2");
 			this.girl.scaleX = 0.26;
 			this.girl.scaleY = 0.26;
-		} else if(variant === 4) {
+		} else if (variant === 4) {
 			this.girl = this.add.image(396, 308, "Girl_bag1");
 			this.girl.scaleX = 0.26;
 			this.girl.scaleY = 0.26;
 		}
 
-			setTimeout(() => {this.scene.start(`BagChoise1`, {choise: variant})}, 1000)
+		setTimeout(() => { this.scene.start(`BagChoise1`, { choise: variant }) }, 1000)
 	}
 
 	/* END-USER-CODE */

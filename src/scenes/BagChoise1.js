@@ -21,7 +21,7 @@ class BagChoise1 extends Phaser.Scene {
 	editorCreate() {
 		this.cameras.main.fadeIn(500, 0, 0, 0)
 
-		this.text = this.add.text(310, 30, "Choose your accessory", {fontFamily: "Nunito Sans", fontSize: "24px"})
+		this.text = this.add.text(290, 30, "Choose your accessory", {fontFamily: "Nunito Sans", fontSize: "24px"})
 		this.text.setDepth(3)
 
 		this.hint1 = this.add.graphics();
@@ -46,9 +46,9 @@ class BagChoise1 extends Phaser.Scene {
 		this.girl.scaleX = 0.26;
 		this.girl.scaleY = 0.26;
 
-		this.glasses = this.add.image(190, 460, "glasses");
+		this.glasses = this.add.image(280, 460, "glasses").setDepth(3);
 
-		this.blue_necklace = this.add.image(610, 460, "blue_necklace");
+		this.blue_necklace = this.add.image(520, 460, "blue_necklace").setDepth(3);
 
 		this.glasses.scaleX = 0.65
 		this.glasses.scaleY = 0.65
@@ -65,9 +65,9 @@ class BagChoise1 extends Phaser.Scene {
 		this.girl.scaleX = 0.26;
 		this.girl.scaleY = 0.26;
 
-		this.glasses = this.add.image(190, 460, "glasses");
+		this.glasses = this.add.image(280, 460, "glasses").setDepth(3);
 
-		this.blue_necklace = this.add.image(610, 460, "blue_necklace");
+		this.blue_necklace = this.add.image(520, 460, "blue_necklace").setDepth(3);
 
 		this.glasses.scaleX = 0.65
 		this.glasses.scaleY = 0.65
@@ -85,9 +85,9 @@ class BagChoise1 extends Phaser.Scene {
 		this.girl.scaleX = 0.26;
 		this.girl.scaleY = 0.26;
 
-		this.glasses = this.add.image(190, 460, "glasses");
+		this.glasses = this.add.image(280, 460, "glasses").setDepth(3);
 
-		this.gold_necklace = this.add.image(610, 460, "gold_necklace");
+		this.gold_necklace = this.add.image(520, 460, "gold_necklace").setDepth(3);
 
 		this.glasses.scaleX = 0.65
 		this.glasses.scaleY = 0.65
@@ -105,9 +105,9 @@ class BagChoise1 extends Phaser.Scene {
 		this.girl.scaleY = 0.26;
 
 
-		this.glasses = this.add.image(190, 460, "glasses");
+		this.glasses = this.add.image(280, 460, "glasses").setDepth(3);
 
-		this.gold_necklace = this.add.image(610, 460, "gold_necklace");
+		this.gold_necklace = this.add.image(520, 460, "gold_necklace").setDepth(3);
 
 		this.glasses.scaleX = 0.65
 		this.glasses.scaleY = 0.65
@@ -147,6 +147,29 @@ class BagChoise1 extends Phaser.Scene {
 			this.blue_necklace.destroy()
 		} else if(this.variant >= 3) {
 			this.gold_necklace.destroy()
+		}
+
+			this.load.image('anima', 'anima.png');
+
+			this.anims.create({
+            key: 'anim',
+            frames: [
+                { key: 'anima' },
+            ],
+            frameRate: 120,
+            repeat: -1,
+			repeatDelay: 1000
+       		});
+			 for (let i = 0; i < 1; i++)
+        {
+            let x = Phaser.Math.Between(300, 500);
+            let y = Phaser.Math.Between(100, 600);
+
+            const sprite = this.add.sprite(x, y, 'anima')
+			sprite.scaleX = 0.05
+			sprite.scaleY = 0.05
+			sprite.setDepth(2)
+            sprite.play('anim');
 		}
 
 		if (variant === 1) {

@@ -39,7 +39,15 @@ class Final extends Phaser.Scene {
 			girl.scaleY = 0.26;
 			girl.setDepth(3)
 
-			this.load.image('man', 'man.png');
+			this.man_default = this.add.image(411, 267, "man_default");
+		this.man_default.scaleX = 0.7;
+		this.man_default.scaleY = 0.7;
+			this.man_default.setDepth(4);
+
+			this.add.text(260, 270, "You are looking so beatiful!").setDepth(5).setColor("black").setFontSize(18)
+
+
+		this.load.image('man', 'man.png');
        	 	this.load.image('man1', 'man1.png');
        	 	this.load.image('man2', 'man2.png');
 
@@ -59,6 +67,7 @@ class Final extends Phaser.Scene {
 			sprite1.scaleY = 0.4
 			sprite1.flipX = true
 			sprite1.play('anim_man');
+
 
 		} else if(this.variant >= 9) {
 			const girl = this.add.image(375, 308, this.look);
@@ -66,7 +75,14 @@ class Final extends Phaser.Scene {
 			girl.scaleY = 0.26;
 			girl.setDepth(3)
 
-			this.load.image('man', 'man.png');
+		this.man_default = this.add.image(411, 300, "man_default");
+		this.man_default.scaleX = 0.7;
+		this.man_default.scaleY = 0.7;
+		this.man_default.setDepth(4);
+
+		this.add.text(280, 300, "What a weird appereance!").setDepth(5).setColor("black").setFontSize(18)
+
+		this.load.image('man', 'man.png');
        	 	this.load.image('man1', 'man1.png');
        	 	this.load.image('man2', 'man2.png');
 
@@ -86,6 +102,7 @@ class Final extends Phaser.Scene {
 			sprite1.scaleY = 0.4
 			sprite1.flipX = true
 			sprite1.play('anim_man');
+
 		}
 
 		this.events.emit("scene-awake");
@@ -98,6 +115,32 @@ class Final extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+
+		setTimeout(() => {this.gameFinished()}, 2500)
+	}
+
+	gameFinished() {
+		this.btn = this.add.image(400, 500, "btn");
+		this.btn.setDepth(4)
+
+		this.btn.setInteractive().on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {this.openLink()})
+	}
+
+	openLink() {
+		const url = 'https://apps.apple.com/us/app/id1491717191'
+
+		console.log(222)
+
+		let s = window.open(url, '_blank');
+
+		if (s && s.focus)
+		{
+			s.focus();
+		}
+		else if (!s)
+		{
+			window.location.href = url;
+		}
 	}
 
 	/* END-USER-CODE */

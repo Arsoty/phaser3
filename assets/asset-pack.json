@@ -57,6 +57,11 @@
                 "key": "blue_necklace"
             },
             {
+                "url": "assets/btn.png",
+                "type": "image",
+                "key": "btn"
+            },
+            {
                 "url": "assets/dino.png",
                 "key": "dino",
                 "type": "image"
@@ -175,6 +180,11 @@
                 "url": "assets/man.png",
                 "type": "image",
                 "key": "man"
+            },
+            {
+                "url": "assets/man_default.png",
+                "type": "image",
+                "key": "man_default"
             },
             {
                 "url": "assets/man1.png",
